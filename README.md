@@ -20,6 +20,8 @@ EchoNav uses a network of Bluetooth Low Energy (BLE) beacons installed throughou
 2. Proximity alerts ("Approaching elevator," "Door 10 feet ahead")
 3. Contextual information about the surrounding environment
 
+The system relies on RSSI (Received Signal Strength Indicator) measurements to determine proximity to Bluetooth devices, enabling real-time tracking and navigation.
+
 ## Requirements
 
 ### Hardware
@@ -40,16 +42,51 @@ EchoNav uses a network of Bluetooth Low Energy (BLE) beacons installed throughou
    cd echonav
    ```
 
-2. Install required packages:
+2. Create and activate a virtual environment:
+   ```
+   # On macOS/Linux
+   python3 -m venv venv
+   source venv/bin/activate
+   
+   # On Windows
+   python -m venv venv
+   venv\Scripts\activate
+   ```
+
+3. Install required packages:
    ```
    pip install -r requirements.txt
    ```
 
-3. Run the bluetooth based navigation app
+4. Run the bluetooth based navigation app
    ```
    python3 bluetooth_nav.py
    ```
 
+## Usage Guide
+
+### Bluetooth Beacon Tracking
+
+1. Launch the application:
+   ```
+   python3 bluetooth_nav.py
+   ```
+
+2. The system will scan for nearby Bluetooth devices and display them with their signal strength (RSSI).
+
+3. After 10 seconds, you'll be prompted to select a device to track by entering its corresponding number.
+
+4. Once connected, the application continuously monitors the signal strength (RSSI) of the selected device, providing feedback on proximity.
+
+5. Press Ctrl+C to stop tracking and exit the application.
+
+### WiFi Scanning (Alternative Method)
+
+The system can also use WiFi signals for positioning:
+```
+python3 wifi_scan.py
+```
+This will continuously scan for available WiFi networks and display their signal strengths.
 
 ## Contributing
 
