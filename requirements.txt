@@ -2,3 +2,6 @@ pyobjc-core>=8.0
 pyobjc-framework-Foundation>=8.0
 pyobjc-framework-CoreBluetooth>=8.0
 pyobjc-framework-libdispatch>=8.0
+pyobjc-framework-Cocoa>=8.0
+numpy>=2.0.0
+sounddevice>=0.4.5
